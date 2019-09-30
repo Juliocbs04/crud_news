@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="tertiary" class="ion-text-center">
+    <ion-buttons slot="start">
+      <ion-menu-button> </ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cadastro de notícia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        <h1>Lista de Notícias</h1>
+      </ion-label>
+    </ion-list-header>
+  </ion-list>
+
+  <ion-text color="dark">
+      <strong>Usuário logado:   </strong>
+      <em> {{user.nome}}</em>
+    </ion-text>
+
+  <ion-list lines="none">
+    <ion-item *ngIf="news.length < 1">
+      <ion-label text-center text-uppercase>Não há notícias cadastradas</ion-label>
+    </ion-item>
+
+    <ion-list>
+      <ion-item-sliding *ngFor="let new of news">
+        <ion-item (click)="detalheNoticia(new)">
+          <ion-avatar slot="start">
+            <img src="{{ new.link }}" />
+          </ion-avatar>
+          <ion-label>{{ new.numero }}</ion-label>
+          <ion-label>{{ new.titulo }}</ion-label>
+        </ion-item>
+        <ion-item-options side="start">
+          <ion-item-option color="warning" (click)="editarNoticia(new)">Editar</ion-item-option>
+          <ion-item-option color="danger" (click)="deletarNoticia(new)" >Excluir</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addNoticias()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

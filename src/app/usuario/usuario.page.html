@@ -1,0 +1,36 @@
+<ion-header>
+  
+  <ion-toolbar color="dark" class="ion-text-center">
+      <ion-buttons slot="start">
+        <ion-menu-button >
+        </ion-menu-button>
+      </ion-buttons>
+    <ion-title>Logar</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="autenticarUsuario()">
+      <ion-item>
+          <ion-label position="stacked">Nome</ion-label>
+          <ion-input [(ngModel)]="usuario.nome" type="text" placeholder="Exemplo: João das neves" name="nome"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="stacked">Login</ion-label>
+          <ion-input [(ngModel)]="usuario.login" type="text" placeholder="Insira seu usuario aqui" name="login"></ion-input>
+        </ion-item>
+      
+          <ion-item>
+              <ion-label position="stacked">Senha</ion-label>
+              <ion-input [(ngModel)]="usuario.senha" type="password" placeholder="Insira sua senha aqui" name="senha"></ion-input>
+          </ion-item>
+      
+          <ion-button ion-button type="submit" expand="full" shape="round" fill="solid" color="dark">
+            CONECTAR USUÁRIO
+          </ion-button>
+    </form>
+  
+
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center" color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button>Voltar</ion-back-button>
+    </ion-buttons>
+    <ion-title>{{noticia.numero}} {{noticia.titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-text color="dark">
+        <strong>Usuário logado:   </strong>
+        <em> {{user.nome}}</em>
+      </ion-text>
+        <ion-card>
+            <img src="{{noticia.link}}" alt="{{noticia.titulo}}">
+            <ion-card-header>
+              <ion-card-subtitle text-uppercase>{{noticia.publicadaPor}}</ion-card-subtitle>
+              <ion-card-title text-uppercase>{{noticia.titulo}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-label>{{noticia.conteudo}}</ion-label>
+            </ion-card-content>
+          </ion-card>
+</ion-content>
